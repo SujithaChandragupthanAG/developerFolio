@@ -2,11 +2,9 @@ import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import { greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
@@ -40,7 +38,7 @@ export default function Greeting() {
               <SocialMedia />
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
+                
                   <a
                     href={require("./resume.pdf")}
                     download="Resume.pdf"
@@ -48,19 +46,15 @@ export default function Greeting() {
                   >
                     <Button text="Download my resume" />
                   </a>
-                )}
               </div>
             </div>
           </div>
-          <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
+          <div className="greeting-image-div">        
               <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
+                width="500" height="500"
+                alt="headshot image"
+                src={require("../../assets/images/Headshot.png")}
               ></img>
-            )}
           </div>
         </div>
       </div>
